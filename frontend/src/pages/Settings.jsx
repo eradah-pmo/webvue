@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/Layout.jsx';
 
 const Settings = () => {
   const [settings, setSettings] = useState({

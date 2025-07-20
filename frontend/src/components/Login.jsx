@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Register = () => {
+const Login = () => {
   const [formData, setFormData] = useState({
-    username: '',
     email: '',
     password: '',
   });
 
-  const { username, email, password } = formData;
+  const { email, password } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,9 +15,11 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/api/auth/register', formData);
+      const res = await axios.post('http://localhost:3001/api/auth/login', formData);
       console.log(res.data);
-      // Redirect to login
+      // Save token to local storage and redirect
+      localStorage.setItem('token', res.data.token);
+      window.location.href = '/dashboard';
     } catch (err) {
       console.error(err.response.data);
     }
@@ -26,14 +27,6 @@ const Register = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        placeholder="Username"
-        name="username"
-        value={username}
-        onChange={onChange}
-        required
-      />
       <input
         type="email"
         placeholder="Email Address"
@@ -51,9 +44,9 @@ const Register = () => {
         minLength="6"
         required
       />
-      <input type="submit" value="Register" />
+      <input type="submit" value="Login" />
     </form>
   );
 };
 
-export default Register;
+export default Login;

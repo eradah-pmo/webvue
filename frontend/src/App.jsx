@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Login from './components/Login';
-import Register from './components/Register';
-import Dashboard from './pages/Dashboard';
-import UserManagement from './pages/UserManagement';
-import RoleManagement from './pages/RoleManagement';
-import Settings from './pages/Settings';
-import ModuleManagement from './pages/ModuleManagement';
-import SystemSettings from './pages/SystemSettings';
+import Login from './components/Login.jsx';
+import Register from './components/Register.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import UserManagement from './pages/UserManagement.jsx';
+import RoleManagement from './pages/RoleManagement.jsx';
+import Settings from './pages/Settings.jsx';
+import ModuleManagement from './pages/ModuleManagement.jsx';
+import SystemSettings from './pages/SystemSettings.jsx';
 
 // A simple auth check function
 const isAuthenticated = () => {

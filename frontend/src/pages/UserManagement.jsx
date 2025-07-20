@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Layout from '../components/layout/Layout';
-import AddUserForm from '../components/AddUserForm';
+import Layout from '../components/layout/Layout.jsx';
+import AddUserForm from '../components/AddUserForm.jsx';
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/Layout.jsx';
 
 const Dashboard = () => {
   const { t } = useTranslation();
